@@ -2,11 +2,17 @@
 
 I am developing a method for selecting time-domain gates for VNA S-parameter measurements when test adapters cannot be calibrated out of the measurement system.
 
-## Current Prototype
+## Current Status
+
+A working application has been developed in Python using scikit-rf. The current version can load and inspect Touchstone S-parameter data, display frequency- and time-domain responses, and perform time-domain gating using user-selected parameters.
+
+The present development work is focused on moving beyond manual gate placement. The next stage is to calculate expected electrical delays from known physical dimensions and propagation velocity, compare those predictions with measured delay and reflection data, and use that information to identify the probable DUT boundaries in the time-domain response.
+
+The application therefore already provides the basic measurement, transformation, visualization, and gating framework. The model-assisted gate-placement logic described below is the next layer being added to that framework.
 
 The current Python prototype loads Touchstone data, performs time-domain processing, and provides the framework for overlaying predicted DUT and adapter regions and suggesting gate locations.
 
-![Current program prototype](screenshot.png)
+![Current program prototype](Screenshot.png)
 
 ## Project Idea
 
